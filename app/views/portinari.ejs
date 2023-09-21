@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portinari</title>
+    <link rel="stylesheet" href="css/portinari.css">
+</head>
+<body>
+    <h1>Obras Portinari</h1>
+    <% for(let i=0; i < paintings.length; i++) { %>
+        <img src="<%= paintings[i].urlimagem%>" alt="<%=paintings[i].nome%>">
+        <h4><%=paintings[i].nome%></h4>
+        <h5><%=paintings[i].artista%></h5>
+        <hr>
+    <% } %>
+</body>
+</html>

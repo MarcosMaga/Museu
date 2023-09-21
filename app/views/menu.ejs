@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+</head>
+<body>
+    <h1>Rota principal da API =====</h1>
+    <div class="painel">
+    <h2>Todas as obras</h2>
+    <% for(let i=0; i < paintings.length; i++) { %>
+        <img src="<%= paintings[i].urlimagem%>" alt="<%=paintings[i].nome%>"/>
+        <h3><a href="/work/<%=paintings[i].idobra%>"><%=paintings[i].nome%></a></h3>
+        <h4><%=paintings[i].artista%></h4>
+        <hr>
+    <% } %>
+    </div>
+</body>
+</html>

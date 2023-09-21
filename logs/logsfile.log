@@ -1,0 +1,3 @@
+{"level":"error","message":"ER_BAD_FIELD_ERROR: Unknown column 'idobr' in 'where clause'"}
+{"level":"error","message":"Table 'museu.obradearte' doesn't exist"}
+{"level":"error","message":"Table 'museu.obradearte' doesn't exist"}

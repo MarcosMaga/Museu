@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Fazer login</h1>
+	<section>
+		<p><%= erro %></p>
+	</section>
+    <form action="" method="post">
+		<input type="email" name="email" placeholder="Digite o seu email" value="<%= data != null ? data.email : '' %>" required>
+		<input type="password" name="senha" placeholder="Digite sua senha" minlength="6" maxlength="20" required>
+		<input type="submit" value="enviar">
+	</form>
+</body>
+</html>
