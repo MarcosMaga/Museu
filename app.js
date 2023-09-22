@@ -7,6 +7,5 @@ routes.portinari(app);
 routes.tarsila(app);
 routes.create(app);
 routes.update(app);
-routes.singup(app);
-routes.singin(app);
+routes.session(app);
 routes.error(app);

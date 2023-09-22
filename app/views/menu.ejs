@@ -7,7 +7,18 @@
     <link rel="stylesheet" type="text/css" href="css/menu.css">
 </head>
 <body>
-    <h1>Rota principal da API =====</h1>
+    <div style="display: flex;">
+        <h1>Rota principal da API =====</h1>
+        <div style="margin-left: auto; display: flex;">
+            <% if(user) { %>
+                <p><%=user.email%></p>
+                <a href="/logout">Logout</a>
+            <% } else { %>
+                <a href="/signin">Login</a>
+            <% }%>
+        </div>
+    </div>
+    <hr>
     <div class="painel">
     <h2>Todas as obras</h2>
     <% for(let i=0; i < paintings.length; i++) { %>

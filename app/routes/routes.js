@@ -5,8 +5,7 @@ const error = require('../controllers/error');
 const create = require('../controllers/create');
 const update = require('../controllers/update');
 const work = require('../controllers/work');
-const signup = require('../controllers/signup');
-const signin = require('../controllers/signin');
+const session = require('../controllers/session');
 
 const {check, validationResult} = require('express-validator');
 
@@ -61,9 +60,15 @@ module.exports = {
             update.core(req, res, errors);
         });
     },
-    singup: (app) => {
+    session: (app) => {
+        app.get('/signin', (req, res) => {
+            session.signin(req, res);
+        })
+        app.post('/signin', (req, res) => {
+            session.login(req, res);
+        })
         app.get('/signup', (req, res) => {
-            signup.create(req, res);
+            session.signup(req, res);
         })
         app.post('/signup', [
             check('email').isEmail().withMessage('Email inválido.'),
@@ -76,15 +81,10 @@ module.exports = {
             })
         ], (req, res) => {
             const errors = validationResult(req);
-            signup.core(req, res, errors);
+            session.register(req, res, errors);
         })
-    },
-    singin: (app) => {
-        app.get('/signin', (req, res) => {
-            signin.create(req, res);
-        })
-        app.post('/signin', (req, res) => {
-            signin.core(req, res);
+        app.get('/logout', (req, res) => {
+            session.logout(req, res);
         })
     },
     error: (app) =>{

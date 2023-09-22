@@ -13,7 +13,7 @@ const home = (req, res) => {
         }
         
         console.log(result);
-        res.render('menu.ejs', {paintings: result});
+        res.render('menu.ejs', {paintings: result, user: req.session.user});
     });
 }
 
