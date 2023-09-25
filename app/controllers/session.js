@@ -1,5 +1,6 @@
 const usersModel = require('../models/users');
 const logger = require('../../config/logger');
+const crypto = require('crypto');
 
 const signin = (req, res) => {
     res.render('signin.ejs', ({erro: null, data: null}));
@@ -40,6 +41,7 @@ const register = (req, res, errors) => {
     if(!errors.isEmpty())
         res.render('signup.ejs', {erros: errors.array(), data: data});
     else{
+        data.senha = crypto.createHash("md5").update(data.senha).digest("hex");
         usersModel.insertUser(data, (error, result) => {
             if(error){
                 logger.log({
